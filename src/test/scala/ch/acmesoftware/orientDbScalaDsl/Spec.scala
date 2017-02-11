@@ -1,8 +1,8 @@
 package ch.acmesoftware.orientDbScalaDsl
 
 import com.orientechnologies.orient.core.db.ODatabaseRecordThreadLocal
-import com.tinkerpop.blueprints.impls.orient.{OrientGraph, OrientGraphFactory, OrientGraphNoTx}
-import org.scalatest.{FlatSpec, Matchers}
+import com.tinkerpop.blueprints.impls.orient.{ OrientGraph, OrientGraphFactory, OrientGraphNoTx }
+import org.scalatest.{ FlatSpec, Matchers }
 
 private[orientDbScalaDsl] trait Spec extends FlatSpec with Matchers {
 

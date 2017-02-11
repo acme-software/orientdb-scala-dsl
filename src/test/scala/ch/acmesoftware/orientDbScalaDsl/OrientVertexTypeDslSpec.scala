@@ -51,7 +51,7 @@ class OrientVertexTypeDslSpec extends Spec {
       res.properties().asScala.count(prop => prop.getName.equals("name") && prop.getType.eq(STRING)) should equal(1)
 
       res.getClassIndexes.asScala.size should equal(1)
-      res.getClassIndexes.asScala .count(index => index.getName.startsWith("name-unique")) should equal(1)
+      res.getClassIndexes.asScala.count(index => index.getName.startsWith("name-unique")) should equal(1)
     })
   }
 }
