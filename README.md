@@ -3,10 +3,11 @@ OrientDB Scala DSL
 
 **It's a Scala DSL for OrientDb...**
 
->> Disclaimer: Neider this code, documentation nor any part of this repository is officially connected/related to 
+>> Disclaimer: 
+>> Neiher this code, documentation nor any part of this repository is officially connected/related to 
 [orientdb.com](http://orientdb.com/) or one of their services. This is an open source project wrapping the OrientDb Java
 driver to provide better compatibility to Scala.
->> For any questions regarding the underlying Java driver or propessional services, please refer to the 
+>> For any questions regarding the underlying Java driver or professional services, please refer to 
 [OrientDB Offical](http://orientdb.com/)
 
 Usage
