@@ -4,22 +4,22 @@ import ch.acmesoftware.orientDbScalaDsl.VertexDsl._
 import com.tinkerpop.blueprints.Element
 
 /** DSL extension for the `Element` class
-  *
-  * See methods for detailed API and examples...
-  *
-  * @param v The original Java instance to wrap
-  */
+ *
+ *  See methods for detailed API and examples...
+ *
+ *  @param v The original Java instance to wrap
+ */
 class VertexDsl(v: Element) {
 
   /** Adds a property to existing vertex
-    *
-    * ==Example==
-    * {{{
-    * existing.dsl withProperty "name" -> "ACME Software Solutions" and "year" -> 2017
-    * }}}
-    *
-    * @param prop The property to set
-    */
+   *
+   *  ==Example==
+   *  {{{
+   *  existing.dsl withProperty "name" -> "ACME Software Solutions" and "year" -> 2017
+   *  }}}
+   *
+   *  @param prop The property to set
+   */
   def withProperty(prop: Property): VertexDsl = {
     v.setProperty(prop._1, prop._2)
     v.dsl

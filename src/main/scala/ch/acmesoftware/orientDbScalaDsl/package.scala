@@ -1,8 +1,8 @@
 package ch.acmesoftware
 
 import com.orientechnologies.orient.core.metadata.schema.OType
-import com.tinkerpop.blueprints.{Element, Vertex}
-import com.tinkerpop.blueprints.impls.orient.{OrientGraph, OrientGraphNoTx, OrientVertex, OrientVertexType}
+import com.tinkerpop.blueprints.{ Element, Vertex }
+import com.tinkerpop.blueprints.impls.orient.{ OrientGraph, OrientGraphNoTx, OrientVertex, OrientVertexType }
 
 package object orientDbScalaDsl {
 
