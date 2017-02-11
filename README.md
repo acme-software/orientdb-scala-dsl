@@ -85,10 +85,15 @@ val g = new OrientGraphFactory("memory:orientDbScalaDslTest").getNoTx
 g.dsl addVertex "Person" withProperty "name" -> "Frank"
 g.dsl addVertex "Customer" withProperty "name" -> "ACME" and "active" -> true
 
-// edit existing
-val existing = g.getVerticesOfClass("Customer").asScala.last
-existing.dsl withProperty "name" -> "ACME Software Solutions" and "year" -> 2017
+// find & filter
+g.dsl findVertices "City" single()
+g.dsl findVertices "City" filter "name" -> "Zurich" filter  "zip" -> 8000 single() // Option[VertexDsl]
+g.dsl findVertices "City" filter "name" -> "Zurich" list() // Iterable[VertexDsl]
+g.dsl findVertices "City" filter "name" -> "Zurich" list() take 3 // Iterable[VertexDsl] (first 3)
 
+// edit existing
+val existing = g.dsl findVertices "Customer" single()
+existing foreach(_ withProperty "name" -> "ACME Software Solutions" and "year" -> 2017)
 ```
 
 Get Involved

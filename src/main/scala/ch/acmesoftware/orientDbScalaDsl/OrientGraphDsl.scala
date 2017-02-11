@@ -1,6 +1,9 @@
 package ch.acmesoftware.orientDbScalaDsl
 
-import com.tinkerpop.blueprints.impls.orient.{ OrientBaseGraph, OrientGraph }
+import com.tinkerpop.blueprints.Vertex
+import com.tinkerpop.blueprints.impls.orient.OrientBaseGraph
+
+import scala.collection.JavaConverters._
 
 /** DSL extension for the `OrientBaseGraph` class
  *
@@ -50,17 +53,14 @@ class OrientGraphDsl(g: OrientBaseGraph) {
    *
    *  ==Example==
    *  {{{
-   *  g.findVertices("Person").get
+   *  // single by label
+   *  g.dsl findVertices "City" single
    *
-   *  g.findVertices("Person")
-   *  .filter("name" -> "Frank")
-   *  .filter("age" -> 28)
-   *  .filter("active" -> true)
-   *  .get
+   *  // single by label and properties
+   *  g.dsl findVertices "City" filter "name" -> "Zurich" filter  "zip" -> 8000 single
    *
-   *  g.findVertices("Person")
-   *  .filter("name" -> "Frank", "age" -> 28, "active" -> true)
-   *  .get
+   *  // list
+   *  g.dsl findVertices "City" filter "name" -> "Zurich" filter  "zip" -> 8000 list
    *  }}}
    *
    *  @param label The label to filter by
@@ -68,12 +68,18 @@ class OrientGraphDsl(g: OrientBaseGraph) {
    */
   def findVertices(label: String) = new VerticlesFilterQuery(label)
 
-  class VerticlesFilterQuery(label: String, fieldFilters: Seq[(String, AnyRef)] = Nil) {
+  class VerticlesFilterQuery(label: String, fieldFilters: Seq[(String, Any)] = Nil) {
 
-    def filter(filter: (String, AnyRef)) = new VerticlesFilterQuery(label, fieldFilters :+ filter)
+    def filter(filter: (String, Any)) = new VerticlesFilterQuery(label, fieldFilters :+ filter)
 
-    def filter(filters: Seq[(String, AnyRef)]) = new VerticlesFilterQuery(label, fieldFilters ++ filters)
+    def filter(filters: Seq[(String, Any)]) = new VerticlesFilterQuery(label, fieldFilters ++ filters)
 
-    def get() = g.getVertices(label, fieldFilters.toMap.keys.toArray, fieldFilters.toMap.values.toArray)
+    def single(): Option[VertexDsl] = list().take(1).lastOption
+
+    def list(): Iterable[VertexDsl] = g.getVertices(
+      label,
+      fieldFilters.toMap.keys.toArray,
+      fieldFilters.toMap.values.map(_.asInstanceOf[AnyRef]).toArray
+    ).asScala.map(_.dsl)
   }
 }

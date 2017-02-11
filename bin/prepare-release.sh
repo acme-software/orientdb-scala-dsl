@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# pre release tasks
+sbt +test +doc
+
+# sync documentation
 rm -rf docs/api
 mkdir -p docs/api/2.11
 mkdir -p docs/api/2.12

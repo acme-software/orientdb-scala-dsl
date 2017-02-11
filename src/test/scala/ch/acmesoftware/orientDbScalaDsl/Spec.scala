@@ -3,8 +3,8 @@ package ch.acmesoftware.orientDbScalaDsl
 import java.util.UUID
 
 import com.orientechnologies.orient.core.db.ODatabaseRecordThreadLocal
-import com.tinkerpop.blueprints.impls.orient.{OrientGraph, OrientGraphFactory, OrientGraphNoTx}
-import org.scalatest.{BeforeAndAfterAll, FlatSpec, Matchers}
+import com.tinkerpop.blueprints.impls.orient.{ OrientGraph, OrientGraphFactory, OrientGraphNoTx }
+import org.scalatest.{ BeforeAndAfterAll, FlatSpec, Matchers }
 
 private[orientDbScalaDsl] trait Spec extends FlatSpec with Matchers with BeforeAndAfterAll {
 
