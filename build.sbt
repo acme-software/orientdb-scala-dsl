@@ -1,3 +1,6 @@
+import com.typesafe.sbt.SbtScalariform.ScalariformKeys
+import scalariform.formatter.preferences._
+
 organization := "ch.acmesoftware"
 
 name := "orientdb-scala-dsl"
@@ -24,6 +27,16 @@ scalacOptions ++= Seq(
 
 libraryDependencies ++= Dependencies.db ++ Dependencies.testing
 
-
+ScalariformKeys.preferences := ScalariformKeys.preferences.value
+  .setPreference(AlignParameters, false)
+  .setPreference(CompactStringConcatenation, false)
+  .setPreference(DoubleIndentClassDeclaration, true)
+  .setPreference(IndentSpaces, 2)
+  .setPreference(PreserveSpaceBeforeArguments, false)
+  .setPreference(SpaceBeforeColon, false)
+  .setPreference(SpaceInsideBrackets, false)
+  .setPreference(SpaceInsideParentheses, false)
+  .setPreference(AlignSingleLineCaseStatements, true)
+  .setPreference(MultilineScaladocCommentsStartOnFirstLine, true)
 
 lazy val orientDbScalaDsl = (project in file("."))
