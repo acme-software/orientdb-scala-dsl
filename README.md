@@ -61,18 +61,43 @@ g.getVertexType("Person").dsl withProperty "age" -> INTEGER
 
 ```
 
-Contribution
+### Vertex
+
+```scala
+// things needed from java driver
+import com.tinkerpop.blueprints.impls.orient.OrientGraphFactory
+import com.orientechnologies.orient.core.metadata.schema.OType._
+
+// java converters for collections
+import scala.collection.JavaConverters._
+
+// scala dsl import
+import ch.acmesoftware.orientDbScalaDsl._
+
+val g = new OrientGraphFactory("memory:orientDbScalaDslTest").getNoTx
+
+// add vertex
+g.dsl addVertex "Person" withProperty "name" -> "Frank"
+g.dsl addVertex "Customer" withProperty "name" -> "ACME" and "active" -> true
+
+// edit existing
+val existing = g.getVerticesOfClass("Customer").asScala.last
+existing.dsl withProperty "name" -> "ACME Software Solutions" and "year" -> 2017
+
+```
+
+Get Involved
 ------------
 
-Please use the GitHub Issue tracker to file bugs or place pull-requests. Any commitment is very welcome.
+Please use the GitHub issue tracker to file bugs or place pull-requests. Any commitment is highly appreciated.
 
-Authors
-------------
-
-* Frank Neff
-* Marco Wüthrich
-
-License
--------
+### License
 
 This project is licensed under MIT. Please refere to [LICENSE](LICENSE) file...
+
+### Contributors
+
+* [Frank Neff](https://github.com/frne)
+* [Marco Wüthrich](https://github.com/marcow93)
+
+*Supported by [ACME Software Solutions GmbH](https://github.com/acme-software)*

@@ -10,7 +10,7 @@ class OrientGraphDsl(g: OrientBaseGraph) {
 
   def createVertexType(label: String): OrientVertexTypeDsl = g.createVertexType(label).dsl
 
-  def addVertex(label: String): OrientVertexDsl = g.addVertex("class:" + label, Nil: _*).dsl
+  def addVertex(label: String): VertexDsl = g.addVertex("class:" + label, Nil: _*).dsl
 
   /** Creates a by-label filter query
     *

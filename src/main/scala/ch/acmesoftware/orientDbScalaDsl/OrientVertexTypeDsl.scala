@@ -5,6 +5,7 @@ import java.util.UUID
 import com.orientechnologies.orient.core.metadata.schema.OClass.INDEX_TYPE
 import com.orientechnologies.orient.core.metadata.schema.OType
 import com.tinkerpop.blueprints.impls.orient.OrientVertexType
+import OrientVertexTypeDsl._
 
 class OrientVertexTypeDsl(vt: OrientVertexType) {
 
@@ -19,6 +20,8 @@ class OrientVertexTypeDsl(vt: OrientVertexType) {
     vt.createIndex(fieldName + "-unique-" + UUID.randomUUID().toString, INDEX_TYPE.UNIQUE, fieldName)
     vt.dsl
   }
+}
 
+object OrientVertexTypeDsl {
   type PropertyDefinition = (String, OType)
 }

@@ -1,6 +1,7 @@
 package ch.acmesoftware
 
 import com.orientechnologies.orient.core.metadata.schema.OType
+import com.tinkerpop.blueprints.{Element, Vertex}
 import com.tinkerpop.blueprints.impls.orient.{OrientGraph, OrientGraphNoTx, OrientVertex, OrientVertexType}
 
 package object orientDbScalaDsl {
@@ -9,8 +10,8 @@ package object orientDbScalaDsl {
     def dsl = new OrientVertexTypeDsl(vt)
   }
 
-  implicit class OrientVertexWrapper(v: OrientVertex) {
-    def dsl = new OrientVertexDsl(v)
+  implicit class VertexWrapper(v: Element) {
+    def dsl = new VertexDsl(v)
   }
 
   implicit class OrientGraphWrapper(g: OrientGraph) {
