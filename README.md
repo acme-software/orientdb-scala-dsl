@@ -4,7 +4,9 @@ OrientDB Scala DSL
 **It's a Scala DSL for OrientDb...** 
 
 [![Build Status](https://travis-ci.org/acme-software/orientdb-scala-dsl.svg?branch=master)](https://travis-ci.org/acme-software/orientdb-scala-dsl)
-
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/acme-software/orientdb-scala-dsl/master/LICENSE)
+![Scala 2.11](https://img.shields.io/badge/scala-2.11-lightgrey.svg)
+![Scala 2.12](https://img.shields.io/badge/scala-2.12-lightgrey.svg)
 
 *Disclaimer:*
 *Neiher this code, documentation nor any part of this repository is officially connected/related to 
