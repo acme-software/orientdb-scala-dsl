@@ -345,17 +345,14 @@ g.getVertexType(<span class="lit">"Person"</span>).dsl withProperty <span class=
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Creates a by-label filter query</p><div class="fullcomment"><div class="comment cmt"><p>Creates a by-label filter query</p><h4>Example</h4><pre>g.findVertices(<span class="lit">"Person"</span>).get
+      <p class="shortcomment cmt">Creates a by-label filter query</p><div class="fullcomment"><div class="comment cmt"><p>Creates a by-label filter query</p><h4>Example</h4><pre><span class="cmt">// single by label</span>
+g.dsl findVertices <span class="lit">"City"</span> single
 
-g.findVertices(<span class="lit">"Person"</span>)
-.filter(<span class="lit">"name"</span> -&gt; <span class="lit">"Frank"</span>)
-.filter(<span class="lit">"age"</span> -&gt; <span class="num">28</span>)
-.filter(<span class="lit">"active"</span> -&gt; <span class="kw">true</span>)
-.get
+<span class="cmt">// single by label and properties</span>
+g.dsl findVertices <span class="lit">"City"</span> filter <span class="lit">"name"</span> -&gt; <span class="lit">"Zurich"</span> filter  <span class="lit">"zip"</span> -&gt; <span class="num">8000</span> single
 
-g.findVertices(<span class="lit">"Person"</span>)
-.filter(<span class="lit">"name"</span> -&gt; <span class="lit">"Frank"</span>, <span class="lit">"age"</span> -&gt; <span class="num">28</span>, <span class="lit">"active"</span> -&gt; <span class="kw">true</span>)
-.get</pre></div><dl class="paramcmts block"><dt class="param">label</dt><dd class="cmt"><p>The label to filter by</p></dd><dt>returns</dt><dd class="cmt"><p>A by-label filter wuery</p></dd></dl></div>
+<span class="cmt">// list</span>
+g.dsl findVertices <span class="lit">"City"</span> filter <span class="lit">"name"</span> -&gt; <span class="lit">"Zurich"</span> filter  <span class="lit">"zip"</span> -&gt; <span class="num">8000</span> list</pre></div><dl class="paramcmts block"><dt class="param">label</dt><dd class="cmt"><p>The label to filter by</p></dd><dt>returns</dt><dd class="cmt"><p>A by-label filter wuery</p></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
