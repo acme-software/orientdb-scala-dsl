@@ -1,8 +1,8 @@
 package ch.acmesoftware.orientDbScalaDsl
 
-class OrientGraphDslSpec extends Spec {
+class GraphDslSpec extends Spec {
 
-  "OrientGraphDsl" should "find existing vertices by label" in {
+  "GraphDsl" should "find existing vertices by label" in {
     tx(g => {
       g.dsl addVertex "City"
     })
@@ -27,6 +27,17 @@ class OrientGraphDslSpec extends Spec {
 
       val res2 = g.dsl findVertices "City" filter "name" -> "Zurich" filter "zip" -> 8000 single ()
       res2.isDefined should equal(true)
+    })
+  }
+
+  it should "retrieve existing vertex type" in {
+    notTx(g => {
+      g.dsl createVertexType "Existing"
+    })
+
+    notTx(g => {
+      g.dsl.getVertexType("Existing").isDefined should equal(true)
+      g.dsl.getVertexType("DoesNotExist").isDefined should equal(false)
     })
   }
 }

@@ -11,7 +11,7 @@ import scala.collection.JavaConverters._
  *
  *  @param g The original Java instance to wrap
  */
-class OrientGraphDsl(g: OrientBaseGraph) {
+class GraphDsl(g: OrientBaseGraph) {
 
   /** Creates a new vertex type (sometimes refered to as "class)
    *
@@ -31,9 +31,21 @@ class OrientGraphDsl(g: OrientBaseGraph) {
    *  }}}
    *
    *  @param label The lable of the vertex type to create
-   *  @return An [[OrientVertexTypeDsl]] instance
+   *  @return An [[VertexTypeDsl]] instance
    */
-  def createVertexType(label: String): OrientVertexTypeDsl = g.createVertexType(label).dsl
+  def createVertexType(label: String): VertexTypeDsl = g.createVertexType(label).dsl
+
+  /** Retrieves existing vertex type if present
+   *
+   *  ==Example==
+   *  {{{
+   *  g.dsl getVertexType "Existing" // Option[VertexTypeDsl]
+   *  }}}
+   *
+   *  @param label
+   *  @return
+   */
+  def getVertexType(label: String): Option[VertexTypeDsl] = Option(g.getVertexType(label)).map(_.dsl)
 
   /** Adds a vertex to graph
    *

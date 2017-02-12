@@ -4,7 +4,7 @@ import scala.collection.JavaConverters._
 
 class VertexDslSpec extends Spec {
 
-  "OrientVertexDsl" should "create vertex with properties" in {
+  "VertexDsl" should "create vertex with properties" in {
     tx(g => {
 
       g.dsl addVertex "Person" withProperty "name" -> "Frank" and "active" -> true
@@ -38,6 +38,46 @@ class VertexDslSpec extends Spec {
 
       res2.getProperty[String]("name") should equal("ACME Software Solutions")
       res2.getProperty[Integer]("year") should equal(2017)
+    })
+  }
+
+  it should "be able to handle mandatory properties" in {
+    tx(g => {
+      g.dsl addVertex "MandatoryProp" withProperty "name" -> "ACME"
+
+      g.commit()
+
+      val res = g.dsl findVertices "MandatoryProp" single ()
+
+      res.get.mandatoryProperty[String]("name") should equal("ACME")
+      res.get.mandatoryProperty[String]("doesNotExist") should equal(null)
+    })
+  }
+
+  it should "be able to handle optional properties" in {
+    tx(g => {
+      g.dsl addVertex "OptionalProp" withProperty "name" -> Some("ACME") and "description" -> None
+
+      g.commit()
+
+      val res = g.dsl findVertices "OptionalProp" single ()
+
+      res.isDefined should equal(true)
+      res.get.property("name").isDefined should equal(true)
+      res.get.property("description").isDefined should equal(false)
+    })
+  }
+
+  it should "be able to handle null properties" in {
+    tx(g => {
+      g.dsl addVertex "NullableProp" withProperty "name" -> null
+
+      g.commit()
+
+      val res = g.dsl findVertices "NullableProp" single ()
+
+      res.isDefined should equal(true)
+      res.get.property("name").isDefined should equal(false)
     })
   }
 }

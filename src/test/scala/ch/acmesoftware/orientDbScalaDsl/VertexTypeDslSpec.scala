@@ -4,9 +4,9 @@ import com.orientechnologies.orient.core.metadata.schema.OType._
 
 import scala.collection.JavaConverters._
 
-class OrientVertexTypeDslSpec extends Spec {
+class VertexTypeDslSpec extends Spec {
 
-  "OrientVertexTypeDsl" should "create vertex type by label" in {
+  "VertexTypeDsl" should "create vertex type by label" in {
     notTx(g => {
       g.dsl createVertexType "NoProp"
     })

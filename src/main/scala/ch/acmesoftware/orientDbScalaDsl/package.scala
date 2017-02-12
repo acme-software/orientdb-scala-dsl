@@ -1,7 +1,7 @@
 package ch.acmesoftware
 
 import com.tinkerpop.blueprints.Element
-import com.tinkerpop.blueprints.impls.orient.{ OrientGraph, OrientGraphNoTx, OrientVertexType }
+import com.tinkerpop.blueprints.impls.orient.{ OrientBaseGraph, OrientGraph, OrientGraphNoTx, OrientVertexType }
 
 /** Main DSL entry point
  *
@@ -16,9 +16,9 @@ import com.tinkerpop.blueprints.impls.orient.{ OrientGraph, OrientGraphNoTx, Ori
  */
 package object orientDbScalaDsl {
 
-  /** Wrapper providing [[OrientVertexTypeDsl]] */
+  /** Wrapper providing [[VertexTypeDsl]] */
   implicit class OrientVertexTypeWrapper(vt: OrientVertexType) {
-    def dsl = new OrientVertexTypeDsl(vt)
+    def dsl = new VertexTypeDsl(vt)
   }
 
   /** Wrapper providing [[VertexDsl]] */
@@ -26,13 +26,8 @@ package object orientDbScalaDsl {
     def dsl = new VertexDsl(v)
   }
 
-  /** Wrapper providing [[OrientGraphDsl]] */
-  implicit class OrientGraphWrapper(g: OrientGraph) {
-    def dsl = new OrientGraphDsl(g)
-  }
-
-  /** Wrapper providing [[OrientGraphDsl]] */
-  implicit class OrientGraphNoTxWrapper(g: OrientGraphNoTx) {
-    def dsl = new OrientGraphDsl(g)
+  /** Wrapper providing [[GraphDsl]] */
+  implicit class OrientGraphWrapper(g: OrientBaseGraph) {
+    def dsl = new GraphDsl(g)
   }
 }

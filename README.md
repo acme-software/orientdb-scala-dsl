@@ -84,6 +84,8 @@ val g = new OrientGraphFactory("memory:orientDbScalaDslTest").getNoTx
 // add vertex
 g.dsl addVertex "Person" withProperty "name" -> "Frank"
 g.dsl addVertex "Customer" withProperty "name" -> "ACME" and "active" -> true
+g.dsl addVertex "Customer" withProperty "name" -> Some("ACME") and "active" -> None // only "name" is persisted
+g.dsl addVertex "Customer" withProperty "name" -> null // ugly, but no exception - don't work with null in Scala ;)
 
 // find & filter
 g.dsl findVertices "City" single()
@@ -94,6 +96,12 @@ g.dsl findVertices "City" filter "name" -> "Zurich" list() take 3 // Iterable[Ve
 // edit existing
 val existing = g.dsl findVertices "Customer" single()
 existing foreach(_ withProperty "name" -> "ACME Software Solutions" and "year" -> 2017)
+
+// get property
+val name: Option[String] = existing.flatMap(v => v.property[String]("name"))
+
+// get mandatory property (nullable) - only use this with schema
+val name2: String = existing.map(v => v.mandatoryProperty[String]("name")).orNull
 ```
 
 Get Involved

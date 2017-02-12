@@ -333,6 +333,25 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="ch.acmesoftware.orientDbScalaDsl.VertexDsl#mandatoryProperty" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mandatoryProperty[T](name:String):T"></a>
+      <a id="mandatoryProperty[T](String):T"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mandatoryProperty</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="ch.acmesoftware.orientDbScalaDsl.VertexDsl.mandatoryProperty.T">T</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#ch.acmesoftware.orientDbScalaDsl.VertexDsl@mandatoryProperty[T](name:String):T" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Gets a mandatory property of a vertex</p><div class="fullcomment"><div class="comment cmt"><p>Gets a mandatory property of a vertex</p><p> Returns a property if it exists or not. This method can be used to retrieve properties baked in the schema, so
+ it must be present. The result is not wrapped in an <code>Option[T]</code>, so if the property does not exist on the database
+ result will be null.</p><h4>Example</h4><pre>existing.dsl.mandatoryProperty[<span class="std">String</span>](<span class="lit">"name"</span>) <span class="cmt">// String</span></pre></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>Property type</p></dd><dt class="param">name</dt><dd class="cmt"><p>The filed name of the property</p></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -384,6 +403,23 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="ch.acmesoftware.orientDbScalaDsl.VertexDsl#property" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="property[T](name:String):Option[T]"></a>
+      <a id="property[T](String):Option[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">property</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="ch.acmesoftware.orientDbScalaDsl.VertexDsl.property.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#ch.acmesoftware.orientDbScalaDsl.VertexDsl@property[T](name:String):Option[T]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Gets a property of a vertex</p><div class="fullcomment"><div class="comment cmt"><p>Gets a property of a vertex</p><h4>Example</h4><pre>existing.dsl.property[<span class="std">String</span>](<span class="lit">"name"</span>) <span class="cmt">// Option[String]</span></pre></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>Property type</p></dd><dt class="param">name</dt><dd class="cmt"><p>The filed name of the property</p></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -418,6 +454,23 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="ch.acmesoftware.orientDbScalaDsl.VertexDsl#v" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="v:com.tinkerpop.blueprints.Element"></a>
+      <a id="v:Element"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">v</span><span class="result">: <span class="extype" name="com.tinkerpop.blueprints.Element">Element</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#ch.acmesoftware.orientDbScalaDsl.VertexDsl@v:com.tinkerpop.blueprints.Element" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The original Java instance to wrap</p>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -503,7 +556,10 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Adds a property to existing vertex</p><div class="fullcomment"><div class="comment cmt"><p>Adds a property to existing vertex</p><h4>Example</h4><pre>existing.dsl withProperty <span class="lit">"name"</span> -&gt; <span class="lit">"ACME Software Solutions"</span> and <span class="lit">"year"</span> -&gt; <span class="num">2017</span></pre></div><dl class="paramcmts block"><dt class="param">prop</dt><dd class="cmt"><p>The property to set</p></dd></dl></div>
+      <p class="shortcomment cmt">Adds a property to existing vertex</p><div class="fullcomment"><div class="comment cmt"><p>Adds a property to existing vertex</p><h4>Example</h4><pre>existing.dsl withProperty <span class="lit">"name"</span> -&gt; <span class="lit">"ACME Software Solutions"</span> and <span class="lit">"year"</span> -&gt; <span class="num">2017</span>
+existing.dsl withProperty <span class="lit">"name"</span> -&gt; <span class="std">Some</span>(<span class="lit">"foo"</span>) <span class="cmt">// will be persisted</span>
+existing.dsl withProperty <span class="lit">"name"</span> -&gt; <span class="std">None</span> <span class="cmt">// nothing will happen</span>
+existing.dsl withProperty <span class="lit">"name"</span> -&gt; <span class="kw">null</span> <span class="cmt">// nothing will happen</span></pre></div><dl class="paramcmts block"><dt class="param">prop</dt><dd class="cmt"><p>The property to set</p></dd></dl></div>
     </li></ol>
             </div>
 
