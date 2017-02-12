@@ -11,9 +11,9 @@ import VertexTypeDsl._
  *
  *  See methods for detailed API and examples...
  *
- *  @param vt The original Java instance to wrap
+ *  @param underlying The original Java instance to wrap
  */
-class VertexTypeDsl(vt: OrientVertexType) {
+class VertexTypeDsl(val underlying: OrientVertexType) {
 
   /** Alias for [[ch.acmesoftware.orientDbScalaDsl.VertexTypeDsl.withProperty]] */
   def and(d: PropertyDefinition): VertexTypeDsl = withProperty(d)
@@ -29,8 +29,8 @@ class VertexTypeDsl(vt: OrientVertexType) {
    *  @return
    */
   def withProperty(d: PropertyDefinition): VertexTypeDsl = {
-    vt.createProperty(d._1, d._2)
-    vt.dsl
+    underlying.createProperty(d._1, d._2)
+    underlying.dsl
   }
 
   /** Adds unique index to existing vertex type
@@ -44,8 +44,8 @@ class VertexTypeDsl(vt: OrientVertexType) {
    *  @return
    */
   def unique(fieldName: String): VertexTypeDsl = {
-    vt.createIndex(fieldName + "-unique-" + UUID.randomUUID().toString, INDEX_TYPE.UNIQUE, fieldName)
-    vt.dsl
+    underlying.createIndex(fieldName + "-unique-" + UUID.randomUUID().toString, INDEX_TYPE.UNIQUE, fieldName)
+    underlying.dsl
   }
 }
 

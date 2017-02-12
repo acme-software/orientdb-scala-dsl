@@ -1,6 +1,5 @@
 package ch.acmesoftware.orientDbScalaDsl
 
-import com.tinkerpop.blueprints.Vertex
 import com.tinkerpop.blueprints.impls.orient.OrientBaseGraph
 
 import scala.collection.JavaConverters._
@@ -9,9 +8,9 @@ import scala.collection.JavaConverters._
  *
  *  See methods for detailed API and examples...
  *
- *  @param g The original Java instance to wrap
+ *  @param underlying The original Java instance to wrap
  */
-class GraphDsl(g: OrientBaseGraph) {
+class GraphDsl(val underlying: OrientBaseGraph) {
 
   /** Creates a new vertex type (sometimes refered to as "class)
    *
@@ -33,7 +32,7 @@ class GraphDsl(g: OrientBaseGraph) {
    *  @param label The lable of the vertex type to create
    *  @return An [[VertexTypeDsl]] instance
    */
-  def createVertexType(label: String): VertexTypeDsl = g.createVertexType(label).dsl
+  def createVertexType(label: String): VertexTypeDsl = underlying.createVertexType(label).dsl
 
   /** Retrieves existing vertex type if present
    *
@@ -45,7 +44,7 @@ class GraphDsl(g: OrientBaseGraph) {
    *  @param label
    *  @return
    */
-  def getVertexType(label: String): Option[VertexTypeDsl] = Option(g.getVertexType(label)).map(_.dsl)
+  def getVertexType(label: String): Option[VertexTypeDsl] = Option(underlying.getVertexType(label)).map(_.dsl)
 
   /** Adds a vertex to graph
    *
@@ -59,7 +58,7 @@ class GraphDsl(g: OrientBaseGraph) {
    *  @param label
    *  @return
    */
-  def addVertex(label: String): VertexDsl = g.addVertex("class:" + label, Nil: _*).dsl
+  def addVertex(label: String): VertexDsl = underlying.addVertex("class:" + label, Nil: _*).dsl
 
   /** Creates a by-label filter query
    *
@@ -76,9 +75,28 @@ class GraphDsl(g: OrientBaseGraph) {
    *  }}}
    *
    *  @param label The label to filter by
-   *  @return A by-label filter wuery
+   *  @return A by-label filter query
    */
   def findVertices(label: String) = new VerticlesFilterQuery(label)
+
+  /** Add an edge to graph
+   *
+   *  ==EXAMPLE==
+   *  {{{
+   *   val company = g addVertex "Company"
+   *   val employee = g addVertex "Employee"
+   *
+   *   // create edge: Employee --(WorksFor)--> Company
+   *   val e1 = g.dsl addEdge "WorksFor" -> (employee -> company)
+   *  }}}
+   *
+   *  @param e The edge definition which is a nested tuple containing label and (in / out) vertices
+   *  @return The EdgeDsl of the just created edge
+   */
+  def addEdge(e: (Label, (FromVertex, ToVertex))) = underlying.addEdge(null, e._2._1.underlying, e._2._2.underlying, e._1).dsl
+
+  /** Commits the transaction */
+  def commit() = underlying.commit()
 
   class VerticlesFilterQuery(label: String, fieldFilters: Seq[(String, Any)] = Nil) {
 
@@ -88,10 +106,14 @@ class GraphDsl(g: OrientBaseGraph) {
 
     def single(): Option[VertexDsl] = list().take(1).lastOption
 
-    def list(): Iterable[VertexDsl] = g.getVertices(
+    def list(): Iterable[VertexDsl] = underlying.getVertices(
       label,
       fieldFilters.toMap.keys.toArray,
       fieldFilters.toMap.values.map(_.asInstanceOf[AnyRef]).toArray
     ).asScala.map(_.dsl)
   }
+
+  type Label = String
+  type FromVertex = VertexDsl
+  type ToVertex = VertexDsl
 }

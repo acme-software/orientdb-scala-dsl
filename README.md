@@ -71,15 +71,11 @@ g.getVertexType("Person").dsl withProperty "age" -> INTEGER
 ```scala
 // things needed from java driver
 import com.tinkerpop.blueprints.impls.orient.OrientGraphFactory
-import com.orientechnologies.orient.core.metadata.schema.OType._
-
-// java converters for collections
-import scala.collection.JavaConverters._
 
 // scala dsl import
 import ch.acmesoftware.orientDbScalaDsl._
 
-val g = new OrientGraphFactory("memory:orientDbScalaDslTest").getNoTx
+val g = new OrientGraphFactory("memory:orientDbScalaDslTest").getTx
 
 // add vertex
 g.dsl addVertex "Person" withProperty "name" -> "Frank"
@@ -102,6 +98,31 @@ val name: Option[String] = existing.flatMap(v => v.property[String]("name"))
 
 // get mandatory property (nullable) - only use this with schema
 val name2: String = existing.map(v => v.mandatoryProperty[String]("name")).orNull
+```
+
+### Edge Type
+
+TBD
+
+### Edge
+
+```scala
+// things needed from java driver
+import com.tinkerpop.blueprints.impls.orient.OrientGraphFactory
+
+// scala dsl import
+import ch.acmesoftware.orientDbScalaDsl._
+
+val g = new OrientGraphFactory("memory:orientDbScalaDslTest").getTx
+
+val company = g.dsl addVertex "Company"
+val employee = g.dsl addVertex "Employee"
+
+// create edge: Employee --(WorksFor)--> Company
+val e1 = g.dsl addEdge "WorksFor" -> (employee -> company)
+
+// add properties...
+e1 withProperty "sinde" -> 2011 and "position" -> "Manager"
 ```
 
 Get Involved

@@ -20,9 +20,9 @@ scalacOptions in Compile ++= Seq(
   "-Xlint"
 )
 
-scalacOptions ++= Seq(
-  "-J-Xms256M",
-  "-J-Xmx1G"
+javaOptions in Test ++= Seq(
+  "-Xms256M",
+  "-Xmx1G"
 )
 
 libraryDependencies ++= Dependencies.db ++ Dependencies.testing
