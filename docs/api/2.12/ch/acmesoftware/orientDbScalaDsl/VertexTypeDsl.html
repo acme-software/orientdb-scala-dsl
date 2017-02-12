@@ -128,26 +128,38 @@
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="ch.acmesoftware">acmesoftware</a></dd></dl></div>
     </li><li class="current-entities indented3">
                         <span class="separator"></span>
+                        <a class="class" href="EdgeDsl.html" title="DSL extension for the Edge class"></a>
+                        <a href="EdgeDsl.html" title="DSL extension for the Edge class">
+                          EdgeDsl
+                        </a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="class" href="package$$EdgeWrapper.html" title="Wrapper providing VertexDsl"></a>
+                        <a href="package$$EdgeWrapper.html" title="Wrapper providing VertexDsl">
+                          EdgeWrapper
+                        </a>
+                      </li><li class="current-entities indented3">
+                        <a class="object" href="ElementDsl$.html" title=""></a>
+                        <a class="trait" href="ElementDsl.html" title=""></a>
+                        <a href="ElementDsl.html" title="">
+                          ElementDsl
+                        </a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
                         <a class="class" href="GraphDsl.html" title="DSL extension for the OrientBaseGraph class"></a>
                         <a href="GraphDsl.html" title="DSL extension for the OrientBaseGraph class">
                           GraphDsl
                         </a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
-                        <a class="class" href="package$$OrientGraphWrapper.html" title="Wrapper providing GraphDsl"></a>
-                        <a href="package$$OrientGraphWrapper.html" title="Wrapper providing GraphDsl">
-                          OrientGraphWrapper
+                        <a class="class" href="package$$GraphWrapper.html" title="Wrapper providing GraphDsl"></a>
+                        <a href="package$$GraphWrapper.html" title="Wrapper providing GraphDsl">
+                          GraphWrapper
                         </a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
-                        <a class="class" href="package$$OrientVertexTypeWrapper.html" title="Wrapper providing VertexTypeDsl"></a>
-                        <a href="package$$OrientVertexTypeWrapper.html" title="Wrapper providing VertexTypeDsl">
-                          OrientVertexTypeWrapper
-                        </a>
-                      </li><li class="current-entities indented3">
-                        <a class="object" href="VertexDsl$.html" title=""></a>
-                        <a class="class" href="VertexDsl.html" title="DSL extension for the Element class"></a>
-                        <a href="VertexDsl.html" title="DSL extension for the Element class">
+                        <a class="class" href="VertexDsl.html" title="DSL extension for the Vertex class"></a>
+                        <a href="VertexDsl.html" title="DSL extension for the Vertex class">
                           VertexDsl
                         </a>
                       </li><li class="current-entities indented3">
@@ -155,6 +167,12 @@
                         <a class="class" href="" title="DSL extension for the OrientVertexType class"></a>
                         <a href="" title="DSL extension for the OrientVertexType class">
                           VertexTypeDsl
+                        </a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="class" href="package$$VertexTypeWrapper.html" title="Wrapper providing VertexTypeDsl"></a>
+                        <a href="package$$VertexTypeWrapper.html" title="Wrapper providing VertexTypeDsl">
+                          VertexTypeWrapper
                         </a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
@@ -244,9 +262,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="ch.acmesoftware.orientDbScalaDsl.VertexTypeDsl#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(vt:com.tinkerpop.blueprints.impls.orient.OrientVertexType):ch.acmesoftware.orientDbScalaDsl.VertexTypeDsl"></a><a id="&lt;init&gt;:VertexTypeDsl"></a>
+      <a id="&lt;init&gt;(underlying:com.tinkerpop.blueprints.impls.orient.OrientVertexType):ch.acmesoftware.orientDbScalaDsl.VertexTypeDsl"></a><a id="&lt;init&gt;:VertexTypeDsl"></a>
       <span class="permalink">
-      <a href="../../../ch/acmesoftware/orientDbScalaDsl/VertexTypeDsl.html#&lt;init&gt;(vt:com.tinkerpop.blueprints.impls.orient.OrientVertexType):ch.acmesoftware.orientDbScalaDsl.VertexTypeDsl" title="Permalink">
+      <a href="../../../ch/acmesoftware/orientDbScalaDsl/VertexTypeDsl.html#&lt;init&gt;(underlying:com.tinkerpop.blueprints.impls.orient.OrientVertexType):ch.acmesoftware.orientDbScalaDsl.VertexTypeDsl" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -255,10 +273,10 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">VertexTypeDsl</span><span class="params">(<span name="vt">vt: <span class="extype" name="com.tinkerpop.blueprints.impls.orient.OrientVertexType">OrientVertexType</span></span>)</span>
+        <span class="name">VertexTypeDsl</span><span class="params">(<span name="underlying">underlying: <span class="extype" name="com.tinkerpop.blueprints.impls.orient.OrientVertexType">OrientVertexType</span></span>)</span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">vt</dt><dd class="cmt"><p>The original Java instance to wrap</p></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">underlying</dt><dd class="cmt"><p>The original Java instance to wrap</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -553,6 +571,22 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="ch.acmesoftware.orientDbScalaDsl.VertexTypeDsl#underlying" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="underlying:com.tinkerpop.blueprints.impls.orient.OrientVertexType"></a><a id="underlying:OrientVertexType"></a>
+      <span class="permalink">
+      <a href="../../../ch/acmesoftware/orientDbScalaDsl/VertexTypeDsl.html#underlying:com.tinkerpop.blueprints.impls.orient.OrientVertexType" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">underlying</span><span class="result">: <span class="extype" name="com.tinkerpop.blueprints.impls.orient.OrientVertexType">OrientVertexType</span></span>
+      </span>
+      
+      
     </li><li name="ch.acmesoftware.orientDbScalaDsl.VertexTypeDsl#unique" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="unique(fieldName:String):ch.acmesoftware.orientDbScalaDsl.VertexTypeDsl"></a><a id="unique(String):VertexTypeDsl"></a>
       <span class="permalink">

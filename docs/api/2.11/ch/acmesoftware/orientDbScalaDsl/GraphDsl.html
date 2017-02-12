@@ -90,7 +90,7 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="ch.acmesoftware.orientDbScalaDsl.GraphDsl#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(g:com.tinkerpop.blueprints.impls.orient.OrientBaseGraph):ch.acmesoftware.orientDbScalaDsl.GraphDsl"></a>
+      <a id="&lt;init&gt;(underlying:com.tinkerpop.blueprints.impls.orient.OrientBaseGraph):ch.acmesoftware.orientDbScalaDsl.GraphDsl"></a>
       <a id="&lt;init&gt;:GraphDsl"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -98,20 +98,71 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">GraphDsl</span><span class="params">(<span name="g">g: <span class="extype" name="com.tinkerpop.blueprints.impls.orient.OrientBaseGraph">OrientBaseGraph</span></span>)</span>
+        <span class="name">GraphDsl</span><span class="params">(<span name="underlying">underlying: <span class="extype" name="com.tinkerpop.blueprints.impls.orient.OrientBaseGraph">OrientBaseGraph</span></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#ch.acmesoftware.orientDbScalaDsl.GraphDsl@&lt;init&gt;(g:com.tinkerpop.blueprints.impls.orient.OrientBaseGraph):ch.acmesoftware.orientDbScalaDsl.GraphDsl" title="Permalink" target="_top">
+      <a href="../../../index.html#ch.acmesoftware.orientDbScalaDsl.GraphDsl@&lt;init&gt;(underlying:com.tinkerpop.blueprints.impls.orient.OrientBaseGraph):ch.acmesoftware.orientDbScalaDsl.GraphDsl" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">g</dt><dd class="cmt"><p>The original Java instance to wrap</p></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">underlying</dt><dd class="cmt"><p>The original Java instance to wrap</p></dd></dl></div>
     </li></ol>
             </div>
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="ch.acmesoftware.orientDbScalaDsl.GraphDsl.VerticlesFilterQuery" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="ch.acmesoftware.orientDbScalaDsl.GraphDsl.FromVertex" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FromVertex=ch.acmesoftware.orientDbScalaDsl.VertexDsl"></a>
+      <a id="FromVertex:FromVertex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">FromVertex</span><span class="result"> = <a href="VertexDsl.html" class="extype" name="ch.acmesoftware.orientDbScalaDsl.VertexDsl">VertexDsl</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#ch.acmesoftware.orientDbScalaDsl.GraphDsl@FromVertex=ch.acmesoftware.orientDbScalaDsl.VertexDsl" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="ch.acmesoftware.orientDbScalaDsl.GraphDsl.Label" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Label=String"></a>
+      <a id="Label:Label"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Label</span><span class="result"> = <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#ch.acmesoftware.orientDbScalaDsl.GraphDsl@Label=String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="ch.acmesoftware.orientDbScalaDsl.GraphDsl.ToVertex" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ToVertex=ch.acmesoftware.orientDbScalaDsl.VertexDsl"></a>
+      <a id="ToVertex:ToVertex"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ToVertex</span><span class="result"> = <a href="VertexDsl.html" class="extype" name="ch.acmesoftware.orientDbScalaDsl.VertexDsl">VertexDsl</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#ch.acmesoftware.orientDbScalaDsl.GraphDsl@ToVertex=ch.acmesoftware.orientDbScalaDsl.VertexDsl" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="ch.acmesoftware.orientDbScalaDsl.GraphDsl.VerticlesFilterQuery" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="VerticlesFilterQueryextendsAnyRef"></a>
       <a id="VerticlesFilterQuery:VerticlesFilterQuery"></a>
       <h4 class="signature">
@@ -186,6 +237,27 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="ch.acmesoftware.orientDbScalaDsl.GraphDsl#addEdge" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="addEdge(e:(GraphDsl.this.Label,(GraphDsl.this.FromVertex,GraphDsl.this.ToVertex))):ch.acmesoftware.orientDbScalaDsl.EdgeDsl"></a>
+      <a id="addEdge((Label,(FromVertex,ToVertex))):EdgeDsl"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addEdge</span><span class="params">(<span name="e">e: (<a href="#Label=String" class="extmbr" name="ch.acmesoftware.orientDbScalaDsl.GraphDsl.Label">Label</a>, (<a href="#FromVertex=ch.acmesoftware.orientDbScalaDsl.VertexDsl" class="extmbr" name="ch.acmesoftware.orientDbScalaDsl.GraphDsl.FromVertex">FromVertex</a>, <a href="#ToVertex=ch.acmesoftware.orientDbScalaDsl.VertexDsl" class="extmbr" name="ch.acmesoftware.orientDbScalaDsl.GraphDsl.ToVertex">ToVertex</a>))</span>)</span><span class="result">: <a href="EdgeDsl.html" class="extype" name="ch.acmesoftware.orientDbScalaDsl.EdgeDsl">EdgeDsl</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#ch.acmesoftware.orientDbScalaDsl.GraphDsl@addEdge(e:(GraphDsl.this.Label,(GraphDsl.this.FromVertex,GraphDsl.this.ToVertex))):ch.acmesoftware.orientDbScalaDsl.EdgeDsl" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Add an edge to graph</p><div class="fullcomment"><div class="comment cmt"><p>Add an edge to graph</p><h4>EXAMPLE</h4><pre><span class="kw">val</span> company = g addVertex <span class="lit">"Company"</span>
+<span class="kw">val</span> employee = g addVertex <span class="lit">"Employee"</span>
+
+<span class="cmt">// create edge: Employee --(WorksFor)--> Company</span>
+<span class="kw">val</span> e1 = g.dsl addEdge <span class="lit">"WorksFor"</span> -&gt; (employee -&gt; company)</pre></div><dl class="paramcmts block"><dt class="param">e</dt><dd class="cmt"><p>The edge definition which is a nested tuple containing label and (in / out) vertices</p></dd><dt>returns</dt><dd class="cmt"><p>The EdgeDsl of the just created edge</p></dd></dl></div>
     </li><li name="ch.acmesoftware.orientDbScalaDsl.GraphDsl#addVertex" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="addVertex(label:String):ch.acmesoftware.orientDbScalaDsl.VertexDsl"></a>
       <a id="addVertex(String):VertexDsl"></a>
@@ -245,6 +317,23 @@ g.dsl addVertex <span class="lit">"Customer"</span> withProperty <span class="li
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="ch.acmesoftware.orientDbScalaDsl.GraphDsl#commit" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="commit():Unit"></a>
+      <a id="commit():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">commit</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#ch.acmesoftware.orientDbScalaDsl.GraphDsl@commit():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Commits the transaction</p>
     </li><li name="ch.acmesoftware.orientDbScalaDsl.GraphDsl#createVertexType" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="createVertexType(label:String):ch.acmesoftware.orientDbScalaDsl.VertexTypeDsl"></a>
       <a id="createVertexType(String):VertexTypeDsl"></a>
@@ -352,7 +441,7 @@ g.dsl findVertices <span class="lit">"City"</span> single
 g.dsl findVertices <span class="lit">"City"</span> filter <span class="lit">"name"</span> -&gt; <span class="lit">"Zurich"</span> filter  <span class="lit">"zip"</span> -&gt; <span class="num">8000</span> single
 
 <span class="cmt">// list</span>
-g.dsl findVertices <span class="lit">"City"</span> filter <span class="lit">"name"</span> -&gt; <span class="lit">"Zurich"</span> filter  <span class="lit">"zip"</span> -&gt; <span class="num">8000</span> list</pre></div><dl class="paramcmts block"><dt class="param">label</dt><dd class="cmt"><p>The label to filter by</p></dd><dt>returns</dt><dd class="cmt"><p>A by-label filter wuery</p></dd></dl></div>
+g.dsl findVertices <span class="lit">"City"</span> filter <span class="lit">"name"</span> -&gt; <span class="lit">"Zurich"</span> filter  <span class="lit">"zip"</span> -&gt; <span class="num">8000</span> list</pre></div><dl class="paramcmts block"><dt class="param">label</dt><dd class="cmt"><p>The label to filter by</p></dd><dt>returns</dt><dd class="cmt"><p>A by-label filter query</p></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -506,6 +595,23 @@ g.dsl findVertices <span class="lit">"City"</span> filter <span class="lit">"nam
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="ch.acmesoftware.orientDbScalaDsl.GraphDsl#underlying" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="underlying:com.tinkerpop.blueprints.impls.orient.OrientBaseGraph"></a>
+      <a id="underlying:OrientBaseGraph"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">underlying</span><span class="result">: <span class="extype" name="com.tinkerpop.blueprints.impls.orient.OrientBaseGraph">OrientBaseGraph</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#ch.acmesoftware.orientDbScalaDsl.GraphDsl@underlying:com.tinkerpop.blueprints.impls.orient.OrientBaseGraph" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The original Java instance to wrap</p>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
